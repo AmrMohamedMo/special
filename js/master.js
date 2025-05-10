@@ -34,10 +34,6 @@ colorsLi.forEach(li => {
         // Set color in Local Storage
         localStorage.setItem(`color_option`, e.target.dataset.color);
         // set Active Cirle
-        // e.target.parentElement.querySelectorAll(`.active`).forEach(a=>{
-        //     a.classList.remove(`active`);
-        // });
-        // e.target.classList.add(`active`);
         handelActive(e);
     });
 });
@@ -85,11 +81,6 @@ const RanBack = document.querySelectorAll(`.random-backgrounds span`);
 RanBack.forEach(span => {
     // click on Every Sapn
     span.addEventListener(`click`,(e) => {
-        // Remove All Active Spans
-        // e.target.parentElement.querySelectorAll(`.active`).forEach(a=>{
-        //     a.classList.remove(`active`);
-        // });
-        // e.target.classList.add(`active`);
         handelActive(e);
         
         // instead of Randomize Imgs
@@ -110,13 +101,13 @@ let skills = document.querySelector(`.skills`)
 
 window.onscroll = function () {
     // skills offset top
-    let Top = skills.offsetTop;         // console.log(Top)         // Top off Skills
+    let Top = skills.offsetTop;         
     // Skills outer height
-    let SHeight = skills.offsetHeight;  // console.log(SHeight)     // Skills Height section
+    let SHeight = skills.offsetHeight;  
     // window height
-    let winDow = this.innerHeight;      // console.log(winDow)      // Your Window Height Now
+    let winDow = this.innerHeight;      
     // window scrollTop
-    let Scroll = this.pageYOffset;      // console.log(Scroll)      // Page Scroll
+    let Scroll = this.pageYOffset;      
     if (Scroll > (Top + SHeight - winDow)){
         let allSkills  = document.querySelectorAll(`.skill-box .skill-progress span`);
         allSkills.forEach(skill => {
@@ -180,8 +171,7 @@ ourGallery.forEach(img => {
 document.addEventListener(`click`, function (e) {
     if (e.target.className == `close-button`) {
         // remove pop
-        e.target.parentNode.remove();    // console.log(e.target.parentNode)
-        //e.target.parentElement.remove(); // console.log(e.target.parentElement)
+        e.target.parentNode.remove();    
         // remove overlay
         document.querySelector(`.popup-overlay`).remove()
     }
@@ -189,25 +179,9 @@ document.addEventListener(`click`, function (e) {
 
 // sellect all bullets
 const allBullets = document.querySelectorAll(`.nav-bullets .bullet`); // console.log(allBullets)
-// allBullets.forEach(bullet => {
-//     bullet.addEventListener(`click`,(e)=>{
-//         let aboutSection = document.querySelector(e.target.dataset.section); 
-//         aboutSection.scrollIntoView({
-//             behavior: `smooth`,
-//         });
-//     });
-// });
 
 // sellect all Links
 const AllLinks = document.querySelectorAll(`.links a`); // console.log(allBullets)
-// AllLinks.forEach(Link => {
-//     Link.addEventListener(`click`,(e)=>{ e.preventDefault();
-//         let aboutSection = document.querySelector(e.target.dataset.section); 
-//         aboutSection.scrollIntoView({
-//             behavior: `smooth`,
-//         });
-//     });
-// });
 
 // Function Parameter Use
 function scrollToSomeWhere(elements) {
@@ -264,21 +238,12 @@ bulletsSpan.forEach(span => {
 
 // reset button
 document.querySelector(`.reset-options`).onclick = function (){
-    // clear (all) localStorage Items
-    // localStorage.clear();
-
-    // clear (some) localStorage Items
     localStorage.removeItem(`background_option`);
     localStorage.removeItem(`color_option`);
     localStorage.removeItem(`bullets_option`);
-    
     // window reload
     window.location.reload();
-    
 }
-// console.log(window)
-// console.log(window.document)
-
 // toggle menu
 let toggleMenu = document.querySelector(`.toggle-menu`);
 let theLinks = document.querySelector(`.links`);
@@ -288,13 +253,7 @@ toggleMenu.onclick = function (e){
     this.classList.toggle(`menu-active`);
     theLinks.classList.toggle(`open`);
 };
-// document.addEventListener(`click`, (e) => {
-//     if (e.target !== theLinks || e.target !== toggleMenu){
-//         console.log(e.target);
-//         // toggleMenu.classList.remove(`menu-active`);
-//         // theLinks.classList.remove(`open`);
-//     }
-// });
+
 document.addEventListener(`click`, (e) => {
     if (e.target !== theLinks && e.target !== toggleMenu){
         // 1- check menu is open
@@ -322,29 +281,4 @@ theLinks.onclick = e => e.stopPropagation();
 
 
 
-// // Switch Color
-// const colorsLi = document.querySelectorAll(`.colors-list li`);
-// colorsLi.forEach(li => {
-//     li.addEventListener(`click`,(e) => {
-//         // Choose Root HTML Element && Set Property=> KeyColor : Valuee.target.dataset.color
-//         document.documentElement.style.setProperty(`--main-color`, e.target.dataset.color);
-//         // Set color in Local Storage
-//         localStorage.setItem(`color_option`, e.target.dataset.color)
-//         // 1- First Local Storage is Emty
-//         // 2= if local is ! Not Emty
-//         // 3= we call Value from Local-Storage
-//         // if we call value from lstor without if=ls=null
-//         // Local Storage Work Start from window.onload
-//         // get work
-//         // be fore you click on any element
 
-        
-
-//         // set Active Cirle
-//         e.target.parentElement.querySelectorAll(`.active`).forEach(a=>{
-//             a.classList.remove(`active`);
-//         });
-//         e.target.classList.add(`active`);
-//     });
-// });
-// images
